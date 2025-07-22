@@ -1,9 +1,8 @@
-
 import React, { useState, useCallback, useEffect } from 'react';
-import { TableRow } from './types';
-import TablePreview from './components/TablePreview';
-import JsonPreview from './components/JsonPreview';
-import { DropboxIcon, TrashIcon, TableIcon, CodeIcon, ClipboardIcon } from './components/icons';
+import { TableRow } from './types.ts';
+import TablePreview from './components/TablePreview.tsx';
+import JsonPreview from './components/JsonPreview.tsx';
+import { DropboxIcon, TrashIcon, TableIcon, CodeIcon, ClipboardIcon } from './components/icons.tsx';
 
 type View = 'table' | 'json';
 
