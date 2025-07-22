@@ -1,5 +1,5 @@
 import React from 'react';
-import { TableRow } from '../types';
+import { TableRow } from '../types.ts';
 
 interface TablePreviewProps {
   headers: string[];
