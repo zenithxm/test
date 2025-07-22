@@ -1,0 +1,4 @@
+{
+  "name": "HTML Table to JSON Converter & Dropbox Uploader",
+  "description": "A utility to paste HTML table data, visualize it as a structured table and in JSON format, and then upload the generated JSON file directly to a Dropbox account."
+}
