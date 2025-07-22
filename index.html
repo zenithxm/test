@@ -1,36 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTML Table to JSON & Dropbox Uploader</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 
-      IMPORTANT: Dropbox Saver requires an App Key. 
-      1. Create an app in the Dropbox App Console (https://www.dropbox.com/developers/apps).
-      2. Choose "Scoped Access" and select the "files.content.write" permission.
-      3. In the settings tab, add your app's domain to the "Chooser/Saver domains" list.
-      4. Replace 'YOUR_APP_KEY_HERE' below with your actual App Key.
-    -->
-    <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="hrxfrcq435yhye9"></script>
-    <!-- Babel Standalone for in-browser TSX/JSX compilation -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@18.2.0",
-    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
-    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
-    "react/": "https://esm.sh/react@^19.1.0/"
-  }
-}
-</script>
-  <link rel="stylesheet" href="/index.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Paste to JSON</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+    </style>
 </head>
-  <body class="bg-slate-50 antialiased">
-    <div id="root"></div>
-    <!-- Changed type to "text/babel" to enable in-browser transpilation -->
-    <script type="text/babel" data-presets="react,typescript" data-type="module" src="./index.tsx"></script>
-  <script type="module" src="/index.tsx"></script>
+<body>
+    <h1>Paste Table to JSON Converter</h1>
+    <p>Copy and paste a table from another website into the textarea below:</p>
+    <textarea id="tablePasteArea"></textarea>
+    <button onclick="uploadJsonToDropbox()">Upload to Dropbox</button>
+
+    <h2>Table Preview</h2>
+    <div id="tablePreview"></div>
+
+    <h2>JSON Output</h2>
+    <pre id="jsonOutput"></pre>
+
+    
+    <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="hrxfrcq435yhye9"></script>
+    <script src="script.js"></script>
 </body>
 </html>
