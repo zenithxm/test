@@ -66,7 +66,7 @@ async function uploadToDropbox(jsonData, uploadPath, accessToken) {
         accessToken: accessToken
     });
 
-    const fileName = 'table-data.json';
+    const fileName = 'table-data2.json';
     const fileContent = JSON.stringify(JSON.parse(jsonData), null, 2);
 
     try {
